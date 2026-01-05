@@ -1,334 +1,115 @@
 {
     "version": "1.0",
     "paquetes": [{
-            "id": "paquete_escolar",
-            "nombre": "Misterios en la Escuela",
-            "icono": "school",
-            "color": "#4A6FA5",
-            "descripcion": "Pequeños misterios del cole con la Happy Pandi y Pili. Siempre con final amable.",
-            "casos": [{
-                    "id": "esc_001",
-                    "titulo": "El Lápiz Perdido",
-                    "descripcion": "En clase, el lápiz de Lola no está en su estuche. Nadie se enfada: seguro que alguien lo movió por error. Descubre quién lo tuvo, dónde estaba y qué otro objeto había allí.",
-                    "dificultad": 1,
-                    "personajes": [
-                        { "id": "P1", "nombre": "Lola", "imagen": "lola.png", "rol": "dueña" },
-                        { "id": "P2", "nombre": "Alex", "imagen": "alex.png", "rol": "ayudante" },
-                        { "id": "P3", "nombre": "Pili", "imagen": "pili.png", "rol": "robot" }
-                    ],
-                    "lugares": [
-                        { "id": "L1", "nombre": "El Aula", "imagen": "aula.png" },
-                        { "id": "L2", "nombre": "La Biblioteca", "imagen": "biblioteca.png" },
-                        { "id": "L3", "nombre": "El Pasillo", "imagen": "pasillo.png" }
-                    ],
-                    "objetos": [
-                        { "id": "O1", "nombre": "Lápiz", "imagen": "lapiz.png" },
-                        { "id": "O2", "nombre": "Goma", "imagen": "goma.png" },
-                        { "id": "O3", "nombre": "Cuaderno", "imagen": "cuaderno.png" }
-                    ],
-                    "pistas": [
-                        "Pili solo estuvo en la biblioteca.",
-                        "En la biblioteca no había ningún lápiz.",
-                        "Lola estuvo todo el tiempo en el aula.",
-                        "En el aula había un cuaderno."
-                    ],
-                    "solucion": {
-                        "culpable": "P2",
-                        "lugar": "L3",
-                        "objeto": "O1"
-                    },
-                    "feedback_correcto": "¡Perfecto! Alex encontró el lápiz en el pasillo y lo recogió para devolverlo. Luego se despistó y no avisó. ¡Caso resuelto!",
-                    "feedback_incorrecto": "¡Buen intento! Si en la biblioteca no había lápiz y Lola estuvo en el aula, piensa qué lugar queda para el lápiz."
+        "id": "paquete_aventuras",
+        "nombre": "Aventuras y Misterios",
+        "icono": "map",
+        "color": "#4A6FA5",
+        "descripcion": "Robos, enigmas y misterios que ocurren dentro de juegos, libros y retos.",
+        "casos": [{
+                "id": "adv_001",
+                "titulo": "El Robo del Mapa del Tesoro",
+                "descripcion": "La Happy Pandi juega a una búsqueda del tesoro en el parque. El mapa ha sido \"robado\" como parte del reto final del juego. Alguien lo escondió para hacerlo más difícil.",
+                "dificultad": 1,
+                "personajes": [
+                    { "id": "P1", "nombre": "Alex", "imagen": "alex.png", "rol": "jugador" },
+                    { "id": "P2", "nombre": "Lola", "imagen": "lola.png", "rol": "jugadora" },
+                    { "id": "P3", "nombre": "Pili", "imagen": "pili.png", "rol": "robot" }
+                ],
+                "lugares": [
+                    { "id": "L1", "nombre": "Banco del parque", "imagen": "banco.png" },
+                    { "id": "L2", "nombre": "Columpio", "imagen": "columpio.png" },
+                    { "id": "L3", "nombre": "Caseta de juegos", "imagen": "caseta.png" }
+                ],
+                "objetos": [
+                    { "id": "O1", "nombre": "Mapa del tesoro", "imagen": "mapa.png" },
+                    { "id": "O2", "nombre": "Mochila", "imagen": "mochila.png" },
+                    { "id": "O3", "nombre": "Botella de agua", "imagen": "botella.png" }
+                ],
+                "pistas": [
+                    "Mientras empezaba el juego, Pili ya estaba en el columpio.",
+                    "En el columpio dejaron la botella de agua para beber después.",
+                    "Alex se quedó junto al banco preparando la siguiente pista del juego.",
+                    "En el banco había una mochila con material del reto."
+                ],
+                "solucion": {
+                    "culpable": "P2",
+                    "lugar": "L3",
+                    "objeto": "O1"
                 },
-                {
-                    "id": "esc_002",
-                    "titulo": "Los Carteles Cambiados",
-                    "descripcion": "Los carteles de normas han cambiado de sitio como si fuera un juego. La profesora sonríe: alguien preparó una sorpresa. Descubre quién lo organizó, dónde lo hizo y qué objeto estaba allí.",
-                    "dificultad": 2,
-                    "personajes": [
-                        { "id": "P1", "nombre": "Victoria", "imagen": "victoria.png", "rol": "organiza" },
-                        { "id": "P2", "nombre": "Michael", "imagen": "michael.png", "rol": "ayudante" },
-                        { "id": "P3", "nombre": "La Profesora", "imagen": "profesora.png", "rol": "profe" }
-                    ],
-                    "lugares": [
-                        { "id": "L1", "nombre": "El Aula", "imagen": "aula.png" },
-                        { "id": "L2", "nombre": "La Biblioteca", "imagen": "biblioteca.png" },
-                        { "id": "L3", "nombre": "La Sala de Arte", "imagen": "arte.png" }
-                    ],
-                    "objetos": [
-                        { "id": "O1", "nombre": "Cartel", "imagen": "cartel.png" },
-                        { "id": "O2", "nombre": "Cinta adhesiva", "imagen": "cinta.png" },
-                        { "id": "O3", "nombre": "Rotulador", "imagen": "rotulador.png" }
-                    ],
-                    "pistas": [
-                        "La profesora solo estuvo en la biblioteca.",
-                        "En la biblioteca no había ningún cartel.",
-                        "Michael solo estuvo en el aula.",
-                        "En el aula había cinta adhesiva."
-                    ],
-                    "solucion": {
-                        "culpable": "P1",
-                        "lugar": "L3",
-                        "objeto": "O1"
-                    },
-                    "feedback_correcto": "¡Genial! Victoria cambió los carteles en la Sala de Arte para preparar una actividad sorpresa. ¡Todo tenía sentido!",
-                    "feedback_incorrecto": "¡Casi! Si el aula tenía cinta adhesiva, el cartel no puede estar allí. Descarta y sigue."
+                "feedback_correcto": "¡Muy bien! Lola escondió el mapa en la caseta para que el reto fuera más emocionante. Has resuelto el misterio del juego.",
+                "feedback_incorrecto": "¡Buen intento! Empieza pensando qué objeto estaba en el columpio y descarta ese lugar."
+            },
+
+            {
+                "id": "adv_002",
+                "titulo": "El Misterio del Libro Sin Final",
+                "descripcion": "En la biblioteca, la Happy Pandi lee un libro de misterio que habla de un asesinato ficticio. Justo antes del final… falta la última página. Alguien la ha escondido para proponer un reto detectivesco.",
+                "dificultad": 2,
+                "personajes": [
+                    { "id": "P1", "nombre": "Victoria", "imagen": "victoria.png", "rol": "lectora" },
+                    { "id": "P2", "nombre": "Michael", "imagen": "michael.png", "rol": "lector" },
+                    { "id": "P3", "nombre": "Pili", "imagen": "pili.png", "rol": "robot" }
+                ],
+                "lugares": [
+                    { "id": "L1", "nombre": "Mesa de lectura", "imagen": "mesa.png" },
+                    { "id": "L2", "nombre": "Estantería", "imagen": "estanteria.png" },
+                    { "id": "L3", "nombre": "Mostrador", "imagen": "mostrador.png" }
+                ],
+                "objetos": [
+                    { "id": "O1", "nombre": "Página del libro", "imagen": "pagina.png" },
+                    { "id": "O2", "nombre": "Marcapáginas", "imagen": "marca.png" },
+                    { "id": "O3", "nombre": "Cuaderno", "imagen": "cuaderno.png" }
+                ],
+                "pistas": [
+                    "Pili estuvo todo el rato junto a la estantería.",
+                    "En la estantería había un marcapáginas.",
+                    "Victoria leyó el libro sentada en la mesa de lectura.",
+                    "En la mesa de lectura estaba el cuaderno."
+                ],
+                "solucion": {
+                    "culpable": "P2",
+                    "lugar": "L3",
+                    "objeto": "O1"
                 },
-                {
-                    "id": "esc_003",
-                    "titulo": "La Mochila de Ana",
-                    "descripcion": "A Ana le falta su mochila. No se ha perdido: alguien la movió para que no se cayera. Descubre quién la movió, dónde quedó y qué objeto había allí.",
-                    "dificultad": 2,
-                    "personajes": [
-                        { "id": "P1", "nombre": "Ana", "imagen": "ana.png", "rol": "dueña" },
-                        { "id": "P2", "nombre": "Tao", "imagen": "tao.png", "rol": "ayudante" },
-                        { "id": "P3", "nombre": "Pili", "imagen": "pili.png", "rol": "robot" }
-                    ],
-                    "lugares": [
-                        { "id": "L1", "nombre": "El Aula", "imagen": "aula.png" },
-                        { "id": "L2", "nombre": "El Gimnasio", "imagen": "gimnasio.png" },
-                        { "id": "L3", "nombre": "El Pasillo", "imagen": "pasillo.png" }
-                    ],
-                    "objetos": [
-                        { "id": "O1", "nombre": "Mochila", "imagen": "mochila.png" },
-                        { "id": "O2", "nombre": "Botella de agua", "imagen": "botella.png" },
-                        { "id": "O3", "nombre": "Estuche", "imagen": "estuche.png" }
-                    ],
-                    "pistas": [
-                        "Pili solo estuvo en el pasillo.",
-                        "En el pasillo había una botella de agua.",
-                        "Ana solo estuvo en el aula.",
-                        "En el aula había un estuche."
-                    ],
-                    "solucion": {
-                        "culpable": "P2",
-                        "lugar": "L2",
-                        "objeto": "O1"
-                    },
-                    "feedback_correcto": "¡Eso es! Tao llevó la mochila al gimnasio para que no estorbara ni se cayera. Luego se le olvidó avisar. ¡Final feliz!",
-                    "feedback_incorrecto": "¡Buen intento! Si el pasillo tiene la botella y el aula tiene el estuche, mira qué objeto queda para el gimnasio."
-                }
-            ]
-        },
-        {
-            "id": "paquete_granja",
-            "nombre": "Enigmas de la Granja",
-            "icono": "farm",
-            "color": "#6B8E23",
-            "descripcion": "Misterios suaves en la granja: cosas que se mueven de sitio y se resuelven en equipo.",
-            "casos": [{
-                    "id": "gra_001",
-                    "titulo": "La Puerta Abierta",
-                    "descripcion": "Una puerta de la caseta aparece abierta y todos se preguntan qué pasó. No hay problema: fue un despiste con buenas intenciones. Descubre quién la abrió, dónde ocurrió y qué objeto había allí.",
-                    "dificultad": 2,
-                    "personajes": [
-                        { "id": "P1", "nombre": "Michael", "imagen": "michael.png", "rol": "cuida" },
-                        { "id": "P2", "nombre": "Ana", "imagen": "ana.png", "rol": "ayuda" },
-                        { "id": "P3", "nombre": "Pili", "imagen": "pili.png", "rol": "robot" }
-                    ],
-                    "lugares": [
-                        { "id": "L1", "nombre": "El Granero", "imagen": "granero.png" },
-                        { "id": "L2", "nombre": "El Huerto", "imagen": "huerto.png" },
-                        { "id": "L3", "nombre": "La Caseta", "imagen": "caseta.png" }
-                    ],
-                    "objetos": [
-                        { "id": "O1", "nombre": "Llave", "imagen": "llave.png" },
-                        { "id": "O2", "nombre": "Cubo", "imagen": "cubo.png" },
-                        { "id": "O3", "nombre": "Cepillo", "imagen": "cepillo.png" }
-                    ],
-                    "pistas": [
-                        "Pili solo estuvo en el huerto.",
-                        "En el huerto había un cubo.",
-                        "Ana solo estuvo en el granero.",
-                        "En el granero había un cepillo."
-                    ],
-                    "solucion": {
-                        "culpable": "P1",
-                        "lugar": "L3",
-                        "objeto": "O1"
-                    },
-                    "feedback_correcto": "¡Correcto! Michael usó la llave en la caseta para arreglar algo y dejó la puerta entornada por despiste. ¡Caso resuelto!",
-                    "feedback_incorrecto": "¡Casi! Si huerto y granero ya tienen objetos, ¿qué objeto queda para la caseta?"
+                "feedback_correcto": "¡Correcto! Michael escondió la página en el mostrador para proponer resolver el misterio antes de leer el final.",
+                "feedback_incorrecto": "¡Casi! Si la estantería tenía el marcapáginas y la mesa el cuaderno, piensa qué lugar queda libre."
+            },
+
+            {
+                "id": "adv_003",
+                "titulo": "El Crimen del Experimento",
+                "descripcion": "Durante un taller de ciencia, la Happy Pandi juega a un reto llamado \"El crimen del experimento\". Una pieza ha sido \"saboteada\" dentro del juego y hay que descubrir quién lo hizo.",
+                "dificultad": 2,
+                "personajes": [
+                    { "id": "P1", "nombre": "Ana", "imagen": "ana.png", "rol": "cientifica" },
+                    { "id": "P2", "nombre": "Tao", "imagen": "tao.png", "rol": "cientifico" },
+                    { "id": "P3", "nombre": "Pili", "imagen": "pili.png", "rol": "robot" }
+                ],
+                "lugares": [
+                    { "id": "L1", "nombre": "Mesa del experimento", "imagen": "mesa_exp.png" },
+                    { "id": "L2", "nombre": "Estantería", "imagen": "estanteria.png" },
+                    { "id": "L3", "nombre": "Mesa de limpieza", "imagen": "limpieza.png" }
+                ],
+                "objetos": [
+                    { "id": "O1", "nombre": "Pieza del experimento", "imagen": "pieza.png" },
+                    { "id": "O2", "nombre": "Guantes", "imagen": "guantes.png" },
+                    { "id": "O3", "nombre": "Cuaderno de notas", "imagen": "cuaderno.png" }
+                ],
+                "pistas": [
+                    "Cuando empezó el reto, Pili ya estaba junto a la estantería.",
+                    "En la estantería estaban los guantes.",
+                    "Ana estuvo todo el tiempo en la mesa del experimento.",
+                    "En la mesa del experimento estaba el cuaderno de notas."
+                ],
+                "solucion": {
+                    "culpable": "P2",
+                    "lugar": "L3",
+                    "objeto": "O1"
                 },
-                {
-                    "id": "gra_002",
-                    "titulo": "La Leche Cambió de Sitio",
-                    "descripcion": "La leche no está donde suele estar. Nadie la cogió por mal: alguien la movió para que estuviera más fresca. Descubre quién la movió y dónde quedó.",
-                    "dificultad": 1,
-                    "personajes": [
-                        { "id": "P1", "nombre": "Victoria", "imagen": "victoria.png", "rol": "cuida" },
-                        { "id": "P2", "nombre": "Tao", "imagen": "tao.png", "rol": "ayuda" },
-                        { "id": "P3", "nombre": "Lola", "imagen": "lola.png", "rol": "ayuda" }
-                    ],
-                    "lugares": [
-                        { "id": "L1", "nombre": "La Cocina", "imagen": "cocina.png" },
-                        { "id": "L2", "nombre": "El Porche", "imagen": "porche.png" },
-                        { "id": "L3", "nombre": "La Sombra del Árbol", "imagen": "arbol.png" }
-                    ],
-                    "objetos": [
-                        { "id": "O1", "nombre": "Leche", "imagen": "leche.png" },
-                        { "id": "O2", "nombre": "Pan", "imagen": "pan.png" },
-                        { "id": "O3", "nombre": "Paño", "imagen": "pano.png" }
-                    ],
-                    "pistas": [
-                        "Lola solo estuvo en la cocina.",
-                        "En la cocina había pan.",
-                        "Victoria solo estuvo en el porche.",
-                        "En el porche no estaba la leche."
-                    ],
-                    "solucion": {
-                        "culpable": "P2",
-                        "lugar": "L3",
-                        "objeto": "O1"
-                    },
-                    "feedback_correcto": "¡Exacto! Tao llevó la leche a la sombra para que estuviera fresca. ¡Una buena idea!",
-                    "feedback_incorrecto": "¡Buen intento! Si la leche no está en el porche y la cocina ya tiene el pan, ¿qué lugar queda para la leche?"
-                },
-                {
-                    "id": "gra_003",
-                    "titulo": "La Campana",
-                    "descripcion": "La campana aparece en un sitio distinto y suena cuando nadie la espera. No es un problema: alguien la movió para una actividad. Descubre quién la movió y dónde la dejó.",
-                    "dificultad": 2,
-                    "personajes": [
-                        { "id": "P1", "nombre": "Alex", "imagen": "alex.png", "rol": "ayuda" },
-                        { "id": "P2", "nombre": "Victoria", "imagen": "victoria.png", "rol": "organiza" },
-                        { "id": "P3", "nombre": "Pili", "imagen": "pili.png", "rol": "robot" }
-                    ],
-                    "lugares": [
-                        { "id": "L1", "nombre": "El Gallinero", "imagen": "gallinero.png" },
-                        { "id": "L2", "nombre": "El Establo", "imagen": "establo.png" },
-                        { "id": "L3", "nombre": "El Huerto", "imagen": "huerto.png" }
-                    ],
-                    "objetos": [
-                        { "id": "O1", "nombre": "Campana", "imagen": "campana.png" },
-                        { "id": "O2", "nombre": "Cubo", "imagen": "cubo.png" },
-                        { "id": "O3", "nombre": "Sombrero", "imagen": "sombrero.png" }
-                    ],
-                    "pistas": [
-                        "Pili solo estuvo en el gallinero.",
-                        "En el gallinero había un cubo.",
-                        "Victoria solo estuvo en el huerto.",
-                        "En el huerto había un sombrero."
-                    ],
-                    "solucion": {
-                        "culpable": "P1",
-                        "lugar": "L2",
-                        "objeto": "O1"
-                    },
-                    "feedback_correcto": "¡Muy bien! Alex dejó la campana en el establo para marcar el inicio de una actividad. Sonó y todos se rieron. ¡Resuelto!",
-                    "feedback_incorrecto": "¡Casi! Si el cubo está en el gallinero y el sombrero en el huerto, ¿qué objeto queda para el establo?"
-                }
-            ]
-        },
-        {
-            "id": "paquete_espacial",
-            "nombre": "Aventuras en el Espacio",
-            "icono": "space",
-            "color": "#8C7AE6",
-            "descripcion": "Misterios en una estación espacial de juguete: gadgets, orden y trabajo en equipo.",
-            "casos": [{
-                    "id": "esp_001",
-                    "titulo": "El Cohete de Juguete",
-                    "descripcion": "El cohete de juguete no está donde debería. Nadie lo escondió: alguien lo guardó para que no se estropeara. Descubre quién lo movió y dónde lo dejó.",
-                    "dificultad": 3,
-                    "personajes": [
-                        { "id": "P1", "nombre": "Michael", "imagen": "michael.png", "rol": "inventor" },
-                        { "id": "P2", "nombre": "Victoria", "imagen": "victoria.png", "rol": "mecánica" },
-                        { "id": "P3", "nombre": "Pili", "imagen": "pili.png", "rol": "robot" }
-                    ],
-                    "lugares": [
-                        { "id": "L1", "nombre": "El Laboratorio", "imagen": "laboratorio.png" },
-                        { "id": "L2", "nombre": "La Sala de Mandos", "imagen": "mandos.png" },
-                        { "id": "L3", "nombre": "El Módulo de Descanso", "imagen": "descanso.png" }
-                    ],
-                    "objetos": [
-                        { "id": "O1", "nombre": "Cohete", "imagen": "cohete.png" },
-                        { "id": "O2", "nombre": "Espuma", "imagen": "espuma.png" },
-                        { "id": "O3", "nombre": "Llave", "imagen": "llave_estelar.png" }
-                    ],
-                    "pistas": [
-                        "Pili solo estuvo en el laboratorio.",
-                        "En el laboratorio había espuma.",
-                        "Victoria solo estuvo en la sala de mandos.",
-                        "En la sala de mandos había una llave."
-                    ],
-                    "solucion": {
-                        "culpable": "P1",
-                        "lugar": "L3",
-                        "objeto": "O1"
-                    },
-                    "feedback_correcto": "¡Brillante! Michael guardó el cohete en el Módulo de Descanso para que no se manchara. ¡Caso resuelto!",
-                    "feedback_incorrecto": "¡Buen intento! Si laboratorio y mandos ya tienen objetos, ¿qué objeto queda para el módulo de descanso?"
-                },
-                {
-                    "id": "esp_002",
-                    "titulo": "El Botón Musical",
-                    "descripcion": "Un botón que hace un sonido está en un sitio distinto. No es una alarma: es parte de un juego. Descubre quién lo movió y dónde lo dejó.",
-                    "dificultad": 2,
-                    "personajes": [
-                        { "id": "P1", "nombre": "Alex", "imagen": "alex.png", "rol": "explora" },
-                        { "id": "P2", "nombre": "Lola", "imagen": "lola.png", "rol": "música" },
-                        { "id": "P3", "nombre": "Tao", "imagen": "tao.png", "rol": "ayuda" }
-                    ],
-                    "lugares": [
-                        { "id": "L1", "nombre": "El Observatorio", "imagen": "observatorio.png" },
-                        { "id": "L2", "nombre": "La Sala de Mandos", "imagen": "mandos.png" },
-                        { "id": "L3", "nombre": "El Taller", "imagen": "taller.png" }
-                    ],
-                    "objetos": [
-                        { "id": "O1", "nombre": "Botón", "imagen": "boton.png" },
-                        { "id": "O2", "nombre": "Mapa", "imagen": "mapa.png" },
-                        { "id": "O3", "nombre": "Herramientas", "imagen": "herramientas.png" }
-                    ],
-                    "pistas": [
-                        "Tao solo estuvo en el taller.",
-                        "En el taller había herramientas.",
-                        "Alex solo estuvo en la sala de mandos.",
-                        "En la sala de mandos no estaba el botón."
-                    ],
-                    "solucion": {
-                        "culpable": "P2",
-                        "lugar": "L1",
-                        "objeto": "O1"
-                    },
-                    "feedback_correcto": "¡Correcto! Lola llevó el botón al observatorio para usarlo en un juego. ¡Todo encaja!",
-                    "feedback_incorrecto": "¡Casi! Si el botón no está en mandos y el taller ya tiene herramientas, ¿qué lugar queda para el botón?"
-                },
-                {
-                    "id": "esp_003",
-                    "titulo": "La Linterna",
-                    "descripcion": "La linterna no está donde debería. Nadie la escondió: la guardaron para que no se perdiera. Descubre quién la movió y a qué lugar fue.",
-                    "dificultad": 1,
-                    "personajes": [
-                        { "id": "P1", "nombre": "Ana", "imagen": "ana.png", "rol": "encarga" },
-                        { "id": "P2", "nombre": "La Profesora", "imagen": "profesora.png", "rol": "profe" },
-                        { "id": "P3", "nombre": "Pili", "imagen": "pili.png", "rol": "robot" }
-                    ],
-                    "lugares": [
-                        { "id": "L1", "nombre": "El Observatorio", "imagen": "observatorio.png" },
-                        { "id": "L2", "nombre": "El Laboratorio", "imagen": "laboratorio.png" },
-                        { "id": "L3", "nombre": "La Sala de Mandos", "imagen": "mandos.png" }
-                    ],
-                    "objetos": [
-                        { "id": "O1", "nombre": "Linterna", "imagen": "linterna.png" },
-                        { "id": "O2", "nombre": "Batería", "imagen": "bateria.png" },
-                        { "id": "O3", "nombre": "Pegatina", "imagen": "pegatina.png" }
-                    ],
-                    "pistas": [
-                        "Pili solo estuvo en el observatorio.",
-                        "En el observatorio había una pegatina.",
-                        "Ana solo estuvo en el laboratorio.",
-                        "En el laboratorio había una batería."
-                    ],
-                    "solucion": {
-                        "culpable": "P2",
-                        "lugar": "L3",
-                        "objeto": "O1"
-                    },
-                    "feedback_correcto": "¡Muy bien! La profesora guardó la linterna en la Sala de Mandos para tenerla controlada. ¡Caso resuelto!",
-                    "feedback_incorrecto": "¡Buen intento! Si observatorio y laboratorio ya tienen objetos, ¿qué objeto queda para la Sala de Mandos?"
-                }
-            ]
-        }
-    ]
+                "feedback_correcto": "¡Exacto! Tao preparó el \"crimen\" llevando la pieza a la mesa de limpieza para el reto. Buena deducción científica.",
+                "feedback_incorrecto": "¡Buen intento! Si la estantería y la mesa ya tienen objetos, fíjate en qué lugar queda libre."
+            }
+        ]
+    }]
 }
