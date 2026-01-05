@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#4A6FA5" />
+    <meta name="description" content="Juego infantil de lógica deductiva: resuelve misterios cotidianos con pistas y un tablero de deducción." />
+    <title>Misterios Lógicos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fuente redondeada y amigable -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="bg-decor" aria-hidden="true"></div>
+
+    <header class="topbar">
+        <div class="brand">
+            <div class="logo" aria-hidden="true">🧩</div>
+            <div class="brand-text">
+                <div class="brand-title">Misterios Lógicos</div>
+                <div class="brand-subtitle">Deducción divertida (sin sustos)</div>
+            </div>
+        </div>
+
+        <div class="top-actions">
+            <button class="btn btn-ghost" id="btnReiniciarProgreso" title="Borrar progreso guardado">
+        🧹 Reiniciar
+      </button>
+            <button class="btn btn-ghost" id="btnVolver" title="Volver" hidden>
+        ⬅️ Volver
+      </button>
+        </div>
+    </header>
+
+    <main class="app" id="appRoot">
+        <!-- PANTALLA: INICIO -->
+        <section class="screen screen-active" id="screenInicio" aria-label="Pantalla de inicio">
+            <div class="hero">
+                <div class="hero-card">
+                    <div class="hero-logo" aria-hidden="true">🕵️‍♀️✨</div>
+                    <h1 class="hero-title">¡Resuelve misterios con tu súper cerebro!</h1>
+                    <p class="hero-text">
+                        Lee la historia, desbloquea pistas y usa el tablero para deducir quién fue, dónde pasó y qué objeto estuvo involucrado. Aquí no hay villanos… solo <strong>malentendidos divertidos</strong>.
+                    </p>
+
+                    <div class="hero-actions">
+                        <button class="btn btn-primary btn-big" id="btnComenzar">
+              🚀 Comenzar
+            </button>
+                        <div class="tiny-note" id="estadoCarga" aria-live="polite"></div>
+                    </div>
+
+                    <div class="hero-badges" aria-hidden="true">
+                        <span class="badge">🎯 Lógica</span>
+                        <span class="badge">🧠 Deducción</span>
+                        <span class="badge">🌈 Colorido</span>
+                    </div>
+                </div>
+
+                <div class="mascot" aria-hidden="true">
+                    <div class="mascot-bubble">¡Pista a pista, lo descubrirás! 🧠</div>
+                    <div class="mascot-body">🤖</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PANTALLA: PAQUETES -->
+        <section class="screen" id="screenPaquetes" aria-label="Selección de paquetes">
+            <div class="screen-header">
+                <h2>Elige una aventura</h2>
+                <p class="muted">Cada paquete tiene misterios distintos. ¡Colecciónalos como cromos!</p>
+            </div>
+
+            <div class="grid" id="listaPaquetes" aria-live="polite"></div>
+        </section>
+
+        <!-- PANTALLA: CASOS -->
+        <section class="screen" id="screenCasos" aria-label="Selección de casos">
+            <div class="screen-header">
+                <h2 id="tituloPaquete">Casos</h2>
+                <p class="muted" id="descPaquete"></p>
+            </div>
+
+            <div class="grid" id="listaCasos" aria-live="polite"></div>
+        </section>
+
+        <!-- PANTALLA: JUEGO -->
+        <section class="screen" id="screenJuego" aria-label="Pantalla de juego">
+            <div class="game-header">
+                <div class="game-title">
+                    <h2 id="tituloCaso">Caso</h2>
+                    <div class="difficulty" id="dificultadCaso" aria-label="Dificultad"></div>
+                </div>
+
+                <div class="game-controls">
+                    <button class="btn btn-secondary" id="btnNuevaPista">🔎 Nueva pista</button>
+                    <button class="btn btn-primary" id="btnResolver">✅ Resolver</button>
+                </div>
+            </div>
+
+            <div class="game-layout">
+                <!-- Panel izquierdo: historia + pistas -->
+                <aside class="panel story-panel" aria-label="Historia y pistas">
+                    <div class="panel-card">
+                        <h3>📜 Historia</h3>
+                        <p id="historiaCaso" class="story"></p>
+                    </div>
+
+                    <div class="panel-card">
+                        <h3>🧩 Pistas</h3>
+                        <p class="muted small">Pulsa “Nueva pista” para revelar pistas poco a poco.</p>
+                        <ol class="clues" id="listaPistas"></ol>
+                        <div class="clue-progress" id="progresoPistas"></div>
+                    </div>
+
+                    <div class="panel-card hint-card">
+                        <h3>💡 Truco de detective</h3>
+                        <p class="muted small">
+                            Marca con ✅ lo que crees posible y con ❌ lo imposible (toca una casilla varias veces).
+                        </p>
+                    </div>
+                </aside>
+
+                <!-- Panel derecho: tablero -->
+                <section class="panel board-panel" aria-label="Tablero de deducción">
+                    <div class="notebook">
+                        <div class="notebook-top" aria-hidden="true">
+                            <span class="ring"></span><span class="ring"></span><span class="ring"></span><span class="ring"></span>
+                            <span class="ring"></span><span class="ring"></span><span class="ring"></span><span class="ring"></span>
+                        </div>
+
+                        <div class="board-head">
+                            <div class="legend">
+                                <span class="chip chip-unknown">⬜ ?</span>
+                                <span class="chip chip-yes">✅ Sí</span>
+                                <span class="chip chip-no">❌ No</span>
+                            </div>
+                            <div class="muted small" id="boardNote"></div>
+                        </div>
+
+                        <div class="board-wrap">
+                            <table class="board" id="tablero"></table>
+                        </div>
+
+                        <div class="mini-section" id="objetosSection">
+                            <h3>🎒 Objetos del misterio</h3>
+                            <div class="object-list" id="listaObjetos"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal: Resolver -->
+    <dialog class="modal" id="modalResolver" aria-label="Resolver caso">
+        <form method="dialog" class="modal-card" id="formResolver">
+            <div class="modal-head">
+                <h3>✅ ¿Cuál es tu solución?</h3>
+                <button class="btn btn-ghost" value="cancel" aria-label="Cerrar">✖️</button>
+            </div>
+
+            <div class="modal-body">
+                <label class="field">
+          <span>¿Quién estaba involucrado?</span>
+          <select id="selectCulpable" required></select>
+        </label>
+
+                <label class="field">
+          <span>¿Dónde ocurrió?</span>
+          <select id="selectLugar" required></select>
+        </label>
+
+                <label class="field">
+          <span>¿Qué objeto fue importante?</span>
+          <select id="selectObjeto" required></select>
+        </label>
+            </div>
+
+            <div class="modal-actions">
+                <button class="btn btn-secondary" value="cancel">Volver</button>
+                <button class="btn btn-primary" id="btnEnviarSolucion" value="default">Comprobar</button>
+            </div>
+        </form>
+    </dialog>
+    <dialog class="modal" id="modalReglas">
+        <div class="modal-card rules-card">
+            <h3>🧠 Reglas del Misterio</h3>
+
+            <ul class="rules-list">
+                <li>👧🧒 Cada persona estuvo en un lugar distinto</li>
+                <li>📍 En cada lugar había solo un objeto</li>
+                <li>🔍 El objeto perdido está en uno de esos lugares</li>
+            </ul>
+
+            <button class="btn btn-primary btn-big" id="btnCerrarReglas">
+      ¡Entendido!
+    </button>
+        </div>
+    </dialog>
+    <!-- Modal: Resultado -->
+    <dialog class="modal" id="modalResultado" aria-label="Resultado">
+        <div class="modal-card result-card">
+            <div class="result-emoji" id="resultadoEmoji" aria-hidden="true">🎉</div>
+            <h3 id="resultadoTitulo">¡Bien!</h3>
+            <p id="resultadoTexto" class="result-text"></p>
+
+            <div class="result-actions">
+                <button class="btn btn-secondary" id="btnSeguirJugando">📚 Volver a casos</button>
+                <button class="btn btn-primary" id="btnReintentar">🔁 Reintentar</button>
+            </div>
+        </div>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="./app.js" defer></script>
+</body>
+
+</html>
